@@ -1,0 +1,56 @@
+<div class="row" ng-controller="PatientListCtrl" >
+  <div class="col-lg-12">
+    <rd-widget>
+      <button type="button" ng-click="addRandomItem(row)" class="btn btn-sm btn-success">
+      <i class="glyphicon glyphicon-plus">
+      </i> Add new patient
+    </button>
+      <rd-widget-body classes="medium no-padding">
+      <table st-table="rowCollection" class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>MRN</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="patient in filteredPatients">
+    <td>{{patient.name}}</td>
+    <td>{{patient.mrn}}</td>
+    
+  </tr>
+  </tbody>
+</table>
+<tfoot>
+      <tr>
+        <td colspan="5" class="text-center">
+          <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+        </td>
+      </tr>
+    </tfoot>
+    <!--
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr ng-repeat="patient in filteredPatients"><td>{{patient.name}}</td><td>{{patient.mrn}}</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+            
+            </tbody>
+          </table>
+        </div>      
+      </rd-widget-body>
+      <rd-widget-footer>
+        <ul class="pagination pagination-sm pull-right">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </rd-widget-footer>
+    </rd-widget>-->
+  </div>
+  
+</div>
