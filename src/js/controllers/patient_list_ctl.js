@@ -9,16 +9,21 @@ angular
 function PatientListCtrl($scope) {
     $scope.patients = [{
         name: 'Barney Rubble',
-        msg: 'Thanks for visiting! Feel free to create pull requests to improve the dashboard!'
+        complete: true,
+        mrn: '1234',
+        medicalCard: '44444'
     }, {
         name: 'Fred Flinstone',
-        msg: 'Found a bug? Create an issue with as many details as you can.'
+        complete: true,
+        mrn: '2341234',
+        medicalCard: '554544'
     }];
 
-      $scope.filteredPatients= []
-      ,$scope.currentPage = 1
-      ,$scope.numPerPage = 10
-      ,$scope.maxSize = 5;
+    $scope.itemsByPage=15;
+    $scope.filteredPatients= []
+    ,$scope.currentPage = 1
+    ,$scope.numPerPage = 10
+    ,$scope.maxSize = 5;
 
     $scope.$watch('currentPage + numPerPage', function() {
         var begin = (($scope.currentPage - 1) * $scope.numPerPage)
@@ -33,7 +38,5 @@ function PatientListCtrl($scope) {
         });
     };
 
-    $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-    };
+
 }
